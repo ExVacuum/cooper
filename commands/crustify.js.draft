@@ -1,0 +1,34 @@
+const { commands, logger } = require('../eris-core/submodules');
+
+module.exports = {
+  name: 'crustify',
+  description: 'Free music download no virus 2009',
+  options: [
+    {
+      name: 'source',
+      description: 'YT or image link for source video',
+      type: commands.OptionTypes.STRING,
+      required: true,
+    },
+    {
+      name: 'audio',
+      description: 'YT link for source audio',
+      type: commands.OptionTypes.STRING,
+      required: false,
+    },
+    {
+      name: 'iterations',
+      description: 'That was funny, now do it again',
+      type: commands.OptionTypes.INTEGER,
+      required: false,
+    }
+  ],
+  execute(interaction, client) {
+    commands.sendPlaceholder(interaction, client);
+    e
+    logger.trace('');
+    for(let i = 0; i < (interaction.data.options[2].value ?? 1); i++) {
+
+    }
+  },
+};

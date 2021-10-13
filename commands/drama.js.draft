@@ -1,0 +1,49 @@
+const { commands, logger } = require('../eris-core/submodules');
+const { sendImmediateResponseMessage } = require('../eris-core/submodules/commands');
+
+const soundFiles = [
+    'bong.wav',
+    'boom.wav',
+    'dundundun.wav',
+    'waterphone.wav',
+    'whatthedogdoin.wav'
+];
+
+module.exports = {
+  name: 'drama',
+  description: 'HOLY SHIT',
+  options: [{
+    name: 'intensity',
+    description: 'Isn\'t this insane?',
+    type: commands.OptionTypes.INTEGER,
+    required: false
+  }],
+  execute(interaction, client) {
+      const voice = interaction.member.voice;
+      if(voice) {
+        voice.channel.join().then((connection) => {
+            let dispatchers = []; 
+            for(let i = 0; i < interaction.data.options[0].value; i++) {
+                const file = soundFiles(Math.floor(Math.random()*soundFiles.length));
+                const dispatcher = connection.play(file);
+                dispatcher.on('end', end => { 
+                    dispatchers = dispatchers.filter((dsp) => dsp != dispatcher);
+                    if(dispatchers.length === 0) {
+                        voice.channel.leave();
+                    }
+                })
+
+            }
+        }).catch((err) => logger.error(`${err.name} at ${err.fileName}:${err.lineNumber}: ${err.message}`));
+        return;
+      }
+      sendImmediateResponseMessage(
+        interaction,
+        client,
+        {
+          content: 'You need to be in a voice channel to do this!',
+          ephemeral: true
+        }
+      );
+  },
+};

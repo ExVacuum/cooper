@@ -1,0 +1,3 @@
+[submodule "eris-core"]
+	path = eris-core
+	url = git@github.com:ExVacuum/eris-core.git

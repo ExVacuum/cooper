@@ -1,0 +1,15 @@
+[11:53:50 p.m.] ([32minfo[39m): Loaded [35mpet[39m from pet.js
+[11:53:50 p.m.] ([32minfo[39m): Loaded [35mping[39m from ping.js
+[11:53:50 p.m.] ([32minfo[39m): Loaded [35mundefined[39m from rtfm.js
+[11:53:50 p.m.] ([32minfo[39m): Found 2 registered slash commands:
+[11:53:50 p.m.] ([32minfo[39m): - [32m[1mping[22m[39m [881226720093544500]
+[11:53:50 p.m.] ([32minfo[39m): - [32m[1mpet[22m[39m [881230740052922419]
+[11:53:50 p.m.] ([33mwarning[39m): Local command undefined not registered (or updated), registering.
+[11:53:50 p.m.] ([32minfo[39m): Searching for matching roles in pain....
+[11:53:50 p.m.] ([32minfo[39m): Searching for matching roles in What is even bread?...
+[11:53:50 p.m.] ([32minfo[39m): Searching for matching roles in The Very Serious Work Server...
+[11:53:50 p.m.] ([32minfo[39m): Searching for matching roles in FAKE SET SERVER...
+[11:54:32 p.m.] ([32minfo[39m): Recieved command pet from Sylvoid
+[11:54:41 p.m.] ([32minfo[39m): Recieved command pet from dxzaikun
+[11:55:02 p.m.] ([32minfo[39m): Recieved command pet from Fink
+[11:56:17 p.m.] ([32minfo[39m): Recieved command ping from dxzaikun

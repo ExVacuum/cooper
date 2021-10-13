@@ -1,0 +1,15 @@
+{
+  "name": "cooper",
+  "version": "1.0.0",
+  "description": "Good Boy.",
+  "main": "eris-core/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "gitea@git.exvacuum.dev:exvacuum/cooper.git"
+  },
+  "author": "Silas Bartha",
+  "license": "MIT"
+}
