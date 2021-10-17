@@ -76,9 +76,9 @@ async function handleImage(interaction, client) {
         const bottomText = options['bottomtext'];
     
         const padAmount = ((topText != null) + (bottomText != null))*100
-        const toptextFilter = `drawtext=text='${topText}':fontsize=32:x=(w-tw)/2:y=(${padAmount/2}-th)/2,`;
-        const bottomtextFilter = `drawtext=text='${bottomText}':fontsize=32:x=(w-tw)/2:y=h-${padAmount/4}-(th/2),`;
-        const filter = `[0:v]pad=ceil(iw/2)*2:ceil(ih/2)*2+${padAmount}:0:${padAmount/2+((bottomText != null)*padAmount/2)-((topText != null)*padAmount/2)}:#FFFFFF@1, ${topText ? toptextFilter:''} ${bottomText ? bottomtextFilter:''} format=rgb24`;
+        const toptextFilter = `drawtext=text='${topText}':fontsize=32:x=(w-tw)/2:y=50-th/2,`;
+        const bottomtextFilter = `drawtext=text='${bottomText}':fontsize=32:x=(w-tw)/2:y=h-50-(th/2),`;
+        const filter = `[0:v]pad=ceil(iw/2)*2:ceil(ih/2)*2+${padAmount}:0:${padAmount/2-((bottomText != null)*padAmount/2)+((topText != null)*padAmount/2)}:#FFFFFF@1, ${topText ? toptextFilter:''} ${bottomText ? bottomtextFilter:''} format=rgb24`;
 
         const clip = `-ss 00:${inPoint}.00 -to 00:${outPoint}.00`;
 
@@ -99,7 +99,7 @@ async function handleImage(interaction, client) {
                         logger.error(stderr);
                     }
                     logger.info('rendering video')    
-                    exec(`ffmpeg -y ${imageExtension!='gif'?'-loop 1':'-ignore_loop 0'} -i intermediate/int.${imageExtension} -filter_complex "${filter}" ${(inPoint != null && outPoint != null)?clip:''} -i intermediate/src.wav -shortest -acodec aac -vcodec libx264 -tune stillimage -pix_fmt rgb24 intermediate/out.mp4`, (error, stdout, stderr) => {
+                    exec(`ffmpeg -y ${imageExtension!='gif'?'-loop 1':'-ignore_loop 0'} -i intermediate/int.${imageExtension} -filter_complex "${filter}" ${(inPoint != null && outPoint != null)?clip:''} -i intermediate/src.wav -shortest -preset veryfast -acodec aac -vcodec libx264 -tune stillimage -pix_fmt rgb24 intermediate/out.mp4`, (error, stdout, stderr) => {
                         if(stderr) {
                             logger.error(stderr);
                         }
