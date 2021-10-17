@@ -11,5 +11,9 @@
     "url": "gitea@git.exvacuum.dev:exvacuum/cooper.git"
   },
   "author": "Silas Bartha",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ffmpeg": "^0.0.4",
+    "youtube-dl-exec": "^1.3.2"
+  }
 }
