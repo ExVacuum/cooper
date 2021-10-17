@@ -94,7 +94,7 @@ async function handleImage(interaction, client) {
                     logger.error(stderr);
                 }
                 logger.info('getting music')
-                exec(`youtube-dl ${musicurl} --extract-audio --audio-format wav --output intermediate/src.wav`, (error, stdout, stderr) => {
+                exec(`yt-dlp ${musicurl} --extract-audio --audio-format wav --output intermediate/src.wav`, (error, stdout, stderr) => {
                     if(stderr) {
                         logger.error(stderr);
                     }
